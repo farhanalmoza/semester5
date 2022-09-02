@@ -1,0 +1,19 @@
+PLAN A
+ambil 8 matkul yang masing-masing bobotnya 3 sks, sehingga mengambil 24 sks di semester 5
+- struktur data			semester 3
+- basis data lanjut		semester 3
+- pengenalan pola		semester 7
+- pengolahan citra		semester 7
+- audit IT				semester 7
+- riset informatika		semester 7
+- manajemen proyek		semester 7
+- mata kuliah pilihan
+	- machine learning
+	- visi komputer
+	- pemrograman API
+	- pemrograman Framework
+
+PLAN B
+ambil studi independen di bidang machine learning
+- AI Mastery Program 				Orbit
+- Riset Kecerdasan Artifisial 		Bisa.ai
