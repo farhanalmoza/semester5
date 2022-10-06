@@ -1,3 +1,6 @@
+// Nama : Farkhan
+// NPM : 20081010060
+
 #include <stdio.h>
 #include <conio.h>
 
