@@ -1,0 +1,25 @@
+tugas 2 DL hari ini jam 6 sore
+rekursif
+adt
+linked list
+stack
+queue
+
+bikin folder npm_nama
+penamaan file pertemuan1_bahasa pemrograma_nama babnya
+contoh nama file p3_C++_faktorial
+p4_C_single linked list
+p2 dan p3 sesuai yang diberikan dari ppt dosen
+yang dikerjakan : p2-p6
+p4-p6 minimal 1 program yang dicoba
+
+UTS secara online, on cam, diabsen
+adt, rekursif, linked list, stack, queue
+ambil 2 bab, lalu buat programnya
+kelompok, programnya saling berhubungan
+yang dikumpulkan:
+- PPT -> alasan, bhs yang digunakan, jelaskan program, contoh output
+- video : video presentasi ppt + demo program
+- source code
+dikumpulkan melalui link yang ada di ilmu
+DL di hari uts
