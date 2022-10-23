@@ -1,0 +1,32 @@
+pembukaan & penutup
+slide 3: penjelasan program & bahasa yang digunakan
+7 slide fungsi
+
+demo program
+kode 		: 1
+judul		: Naruto
+penerbit	: VIZ
+pengarang	: masashi
+tahun 	: 2000
+
+kode 		: 2
+judul		: Conan
+penerbit	: Elex
+pengarang	: gosho
+tahun 	: 1997
+
+kode 		: 3
+judul		: Boruto
+penerbit	: Shuesiha
+pengarang	: masashi
+tahun 	: 2016
+
+kode 		: 4
+judul		: Bleach
+penerbit	: Shueisha
+pengarang	: Tite
+tahun 	: 2001
+
+Farhan	: pembukaan & penutup, slide 3, demo input
+Kun		: slide 4, 5, 6, demo kirim, tampil, cari(kode 2)
+Azka		: slide 7, 8, 9, 10, demo hapus(3), tampil

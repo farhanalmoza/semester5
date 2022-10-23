@@ -1,20 +1,19 @@
 // FINAL PROJECT UTS STRUKTUR DATA KELOMPOK 5
 // Farkhan 20081010060
 // Azka Avicenna Rasjid 20081010115
-// Kuncoro Ariadi 20081010
+// Kuncoro Ariadi 20081010098
 
 // Program pendataan komik di gudang
 
 #include <iostream>
 #include <string.h>
+#include <stdlib.h>
+#include <conio.h>
 using namespace std;
 
 struct node {
-    int kode_komik;
-    char judul[50];
-    char penerbit[50];
-    char pengarang[50];
-    int tahun;
+    int kode_komik, tahun;
+    char judul[50], penerbit[50], pengarang[50];
     struct node *next;
 };
 struct node* front = NULL;
@@ -28,16 +27,11 @@ void tambah() {
     char pengarang[50];
     int tahun;
 
-    cout << "Masukkan Kode Komik : ";
-    cin >> kode_komik;
-    cout << "Masukkan Judul Komik : ";
-    cin >> judul;
-    cout << "Masukkan Penerbit Komik : ";
-    cin >> penerbit;
-    cout << "Masukkan Pengarang Komik : ";
-    cin >> pengarang;
-    cout << "Masukkan Tahun Terbit Komik : ";
-    cin >> tahun;
+    cout << ">> Masukkan Kode Komik		: "; cin >> kode_komik;
+    cout << ">> Masukkan Judul Komik		: "; cin >> judul;
+    cout << ">> Masukkan Penerbit Komik	: "; cin >> penerbit;
+    cout << ">> Masukkan Pengarang Komik	: "; cin >> pengarang;
+    cout << ">> Masukkan Tahun Terbit Komik	: "; cin >> tahun;
 
     if (rear == NULL) {
         rear = (struct node *)malloc(sizeof(struct node));
@@ -59,13 +53,13 @@ void tambah() {
         temp->next = NULL;
         rear = temp;
     }
-    cout << "Komik Berhasil Ditambahkan" << endl << endl;
+    cout << "\nKomik Berhasil Ditambahkan" << endl << endl;
 }
 
 void kirim() {
     temp = front;
     if (front == NULL) {
-        cout << "Tidak ada komik yang bisa dikirim" << endl;
+        cout << "Gudang kosong, masukkan data komik terlebih dahulu..." << endl;
         return;
     } else if (temp->next != NULL) {
         temp = temp->next;
@@ -83,15 +77,20 @@ void kirim() {
 void tampil() {
     temp = front;
     if ((front == NULL) && (rear == NULL)) {
-        cout<<"Tidak ada komik di gudang"<<endl << endl;
+        cout<<"Gudang kosong, masukkan data komik terlebih dahulu..."<<endl << endl;
         return;
     }
     int i = 1;
-    cout << endl << "Data komik di gudang: " << endl;
+    cout << "Data komik yang tersedia : " << endl << endl;
     while (temp != NULL) {
-        cout << i << ". Komik " << temp->judul << endl;
-        temp = temp->next;
+    	cout << "[ Data Komik Ke-" << i << " ]"<< endl;
+        cout << "Kode Komik		: " << temp->kode_komik << endl;
+        cout << "Judul Komik		: " << temp->judul << endl;
+        cout << "Penerbit Komik		: " << temp->penerbit << endl;
+        cout << "Pengarang Komik		: " << temp->pengarang << endl;
+        cout << "Tahun Terbit Komik	: " << temp->tahun << endl << endl;
         i++;
+        temp = temp->next;
     }
     cout<<endl;
 }
@@ -101,7 +100,7 @@ void cari() {
     int flag = 0;
     temp = front;
     if (temp == NULL) {
-        cout << "Tidak ada komik di gudang" << endl;
+        cout << "Gudang kosong, masukkan data komik terlebih dahulu..." << endl;
         return;
     }
     cout << "Masukkan Kode Komik : ";
@@ -114,13 +113,13 @@ void cari() {
         temp = temp->next;
     }
     if (flag == 1) {
-        cout << "Kode Komik : " << temp->kode_komik << endl;
-        cout << "Judul Komik : " << temp->judul << endl;
-        cout << "Penerbit Komik : " << temp->penerbit << endl;
-        cout << "Pengarang Komik : " << temp->pengarang << endl;
-        cout << "Tahun Terbit Komik : " << temp->tahun << endl;
+        cout << "\nKode Komik		: " << temp->kode_komik << endl;
+        cout << "Judul Komik		: " << temp->judul << endl;
+        cout << "Penerbit Komik		: " << temp->penerbit << endl;
+        cout << "Pengarang Komik		: " << temp->pengarang << endl;
+        cout << "Tahun Terbit Komik	: " << temp->tahun << endl;
     } else {
-        cout << "Kode Komik tidak ditemukan" << endl;
+        cout << "Kode Komik tidak ditemukan..." << endl;
     }
 
     cout << endl;
@@ -132,7 +131,7 @@ void hapus() {
     struct node *temp1;
     temp = front;
     if (temp == NULL) {
-        cout << "Tidak ada komik di gudang" << endl;
+        cout << "Gudang kosong, masukkan data komik terlebih dahulu..." << endl;
         return;
     }
     cout << "Masukkan Kode Komik : ";
@@ -177,37 +176,40 @@ void hapus() {
 
 int main() {
     int pilihan;
+    
+    cout << "=================================================" << endl;
+	cout << "=== Program Pendataan Komik Pada Suatu Gudang ===" << endl; 
+	cout << "=================================================" << endl << endl;
+	
+	cout << "DISUSUN OLEH KELOMPOK 5 " << endl;
+	cout << "Azka Avicenna Rasjid	[20081010115]" << endl;
+	cout << "Farkhan			[20081010060]" << endl;
+	cout << "Kuncoro Ariadi		[20081010096]" << endl << endl;
+	
     do {
-        cout << "1. Tambah Komik" << endl;
+        cout << "Pilihan menu yang tersedia : " << endl;
+		cout << "1. Tambah Komik" << endl;
         cout << "2. Kirim Komik ke Toko" << endl;
         cout << "3. Tampil Komik di Gudang" << endl;
         cout << "4. Cari Komik di Gudang" << endl;
         cout << "5. Hapus Komik di Gudang" << endl;
-        cout << "6. Keluar" << endl;
-        cout << "Masukkan Pilihan : ";
-        cin >> pilihan;
+        cout << "6. Keluar" << endl << endl;
+        cout << ">> Masukkan Pilihan : "; cin >> pilihan;
+
+        cout << endl;
         switch (pilihan) {
-            case 1:
-                tambah();
-                break;
-            case 2:
-                kirim();
-                break;
-            case 3:
-                tampil();
-                break;
-            case 4:
-                cari();
-                break;
-            case 5:
-                hapus();
-                break;
+            case 1: tambah(); getch(); break;
+            case 2: kirim(); getch(); break;
+            case 3: tampil(); getch(); break;
+            case 4: cari(); getch(); break;
+            case 5: hapus(); getch(); break;
             case 6:
-                cout << "Terima Kasih" << endl;
-                break;
+                cout << "Terima Kasih Telah Menggunakan Program Ini..." << endl;
+                getch(); break;
             default:
                 cout << "Pilihan tidak tersedia" << endl;
         }
+        system("cls");	
     } while (pilihan != 6);
     return 0;
 }
