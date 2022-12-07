@@ -210,6 +210,6 @@ int main() {
                 cout << "Pilihan tidak tersedia" << endl;
         }
         system("cls");	
-    } while (pilihan != 6);
+    } while (pilihan != 5);
     return 0;
 }
