@@ -22,6 +22,18 @@ class Node
 	int height;
 };
 
+/* fungsi untuk membuat node baru
+   dengan key yang diberikan */
+Node* newNode(int key) {
+	Node* node = new Node();
+	node->key = key;
+	node->left = NULL;
+	node->right = NULL;
+	node->height = 1; // node baru di tambahkan
+					// di daun
+	return(node);
+}
+
 // fungsi untuk mendapatkan tinggi node
 int height(Node *N) {
 	if (N == NULL)
@@ -83,6 +95,26 @@ Node * minValueNode(Node* node) {
         current = current->left;
 
     return current;
+}
+
+// fungsi insert BST
+Node* insertBST(Node* node, int key) {
+	/* 1. normal BST insert */
+	if (node == NULL)
+		return(newNode(key));
+
+	if (key < node->key)
+		node->left = insertBST(node->left, key);
+	else if (key > node->key)
+		node->right = insertBST(node->right, key);
+	else // nilai key sama dengan node yang ada
+		return node;
+
+	/* 2. Update tinggi node */
+	node->height = 1 + max(height(node->left),
+						height(node->right));
+
+    return node;
 }
 
 // START SHOW ALL
@@ -313,7 +345,10 @@ int main() {
         switch (pilihan) {
             case 1: 
                 // insert BST
-                cout << ">> belum ada fungsi" << endl;
+                int kode_komik;
+                cout << ">> Masukkan Kode Komik		: "; cin >> kode_komik;
+                tambah(kode_komik);
+                root = insertBST(root, kode_komik);
                 break;
             case 2:
                 // delete AVL
